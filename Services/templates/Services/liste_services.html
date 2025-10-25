@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Nos Services - DomServices{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4 text-primary fw-bold">Nos Services à Domicile</h1>
+    <p class="text-center text-muted mb-5">
+        Découvrez nos prestations à domicile : nous intervenons directement chez vous pour vous offrir un service rapide et personnalisé.
+    </p>
+
+    <div class="row">
+        {% for service in services %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ service.titre }}</h5>
+                    <p class="card-text">{{ service.description|linebreaks }}</p>
+
+                    {% if service.prix %}
+                        <p class="card-text">
+                            <strong>Prix général :</strong> {{ service.prix }} GNF
+                        </p>
+                    {% endif %}
+
+                    {% if service.details %}
+                        <p class="card-text">
+                            <strong>Détails :</strong><br>{{ service.details|linebreaks }}
+                        </p>
+                    {% endif %}
+
+                    <div class="text-center mt-3">
+                        <a href="{% url 'contact' %}" class="btn btn-outline-primary">
+                            Contactez-nous
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center text-muted">Aucun service disponible pour le moment.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

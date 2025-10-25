@@ -1,0 +1,16 @@
+# Environnement virtuel
+venv/
+.env
+
+# Fichiers Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+/static/
+media/
+
+# Fichiers système
+.DS_Store
+Thumbs.db

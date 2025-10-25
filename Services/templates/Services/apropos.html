@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-primary text-white text-center py-5" data-aos="fade-down">
+  <div class="container">
+    <h1 class="display-4 fw-bold">À propos de DomServices</h1>
+    <p class="lead mt-3">Votre partenaire de confiance pour tous vos services à domicile</p>
+  </div>
+</section>
+
+<!-- Histoire Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+        <img src="{% static 'Services/images/about-hero.jpg' %}" class="img-fluid rounded shadow" alt="Services à domicile">
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h2 class="mb-3">Notre Histoire</h2>
+        <p>DomServices est né pour simplifier la vie quotidienne en offrant des services fiables et professionnels à domicile. Notre mission est de rendre chaque interaction simple, rapide et agréable pour nos clients.</p>
+        <p>Avec des centaines de clients satisfaits, notre équipe passionnée et expérimentée continue de développer des solutions personnalisées pour répondre aux besoins de chacun.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Valeurs Section -->
+<section class="bg-light py-5">
+  <div class="container text-center">
+    <h2 class="mb-5" data-aos="fade-up">Nos Valeurs</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="card border-0 shadow-sm h-100 hover-shadow transition">
+          <div class="card-body">
+            <i class="fas fa-handshake fa-3x mb-3 text-primary"></i>
+            <h5 class="card-title fw-bold">Fiabilité</h5>
+            <p class="card-text">Ponctualité et professionnalisme garantis à chaque service rendu.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card border-0 shadow-sm h-100 hover-shadow transition">
+          <div class="card-body">
+            <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+            <h5 class="card-title fw-bold">Professionnalisme</h5>
+            <p class="card-text">Notre équipe formée répond à vos besoins avec expertise et sérieux.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card border-0 shadow-sm h-100 hover-shadow transition">
+          <div class="card-body">
+            <i class="fas fa-heart fa-3x mb-3 text-primary"></i>
+            <h5 class="card-title fw-bold">Proximité</h5>
+            <p class="card-text">Nous restons proches de nos clients et adaptons nos services à chaque situation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 text-center bg-primary text-white" data-aos="fade-up">
+  <div class="container">
+    <h3 class="mb-3">Prêt à simplifier votre quotidien ?</h3>
+    <p class="mb-4">Contactez-nous dès maintenant et découvrez comment DomServices peut vous aider !</p>
+    <a href="{% url 'contact' %}" class="btn btn-light btn-lg fw-bold">Contactez-nous</a>
+  </div>
+</section>
+
+<style>
+/* Hover animation sur les cartes */
+.hover-shadow:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+  transition: all 0.3s ease-in-out;
+}
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+</style>
+{% endblock %}
