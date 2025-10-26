@@ -1,64 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Accueil - DomServices{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <!-- Section de bienvenue -->
-    <div class="text-center mb-5">
-        <h1 class="fw-bold text-primary">Bienvenue sur DomServices</h1>
-        <p class="lead">
-            Des <strong>services à domicile</strong> adaptés à vos besoins :
-            formation, assistance informatique, entretien et bien plus encore.
-        </p>
-        <a href="{% url 'services' %}" class="btn btn-primary btn-lg mt-3">Voir nos services</a>
-    </div>
+<header class="text-center my-4">
+    <img src="{% static 'image/accueil.png' %}" class="img-fluid w-100" alt="Accueil">
 
-    <!-- Section Aperçu des services -->
-    <div class="row text-center">
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm h-100">
-                <div class="card-body">
-                    <h5 class="card-title text-primary">Formation bureautique</h5>
-                    <p class="card-text">
-                        Apprenez Word, Excel, PowerPoint ou Access à domicile avec nos formateurs expérimentés.
-                    </p>
-                    <a href="{% url 'services' %}" class="btn btn-outline-primary btn-sm">En savoir plus</a>
-                </div>
-            </div>
-        </div>
+</header>
 
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm h-100">
-                <div class="card-body">
-                    <h5 class="card-title text-success">Assistance informatique</h5>
-                    <p class="card-text">
-                        Installation, configuration, dépannage — nous intervenons directement chez vous.
-                    </p>
-                    <a href="{% url 'services' %}" class="btn btn-outline-success btn-sm">Découvrir</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm h-100">
-                <div class="card-body">
-                    <h5 class="card-title text-warning">Maintenance & nettoyage PC</h5>
-                    <p class="card-text">
-                        Améliorez les performances de votre ordinateur grâce à un entretien complet.
-                    </p>
-                    <a href="{% url 'services' %}" class="btn btn-outline-warning btn-sm">Plus d'infos</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Section contact -->
-    <div class="text-center mt-5">
-        <h3>Besoin d’un service personnalisé ?</h3>
-        <p>
-            Contactez-nous directement via la page <a href="{% url 'contact' %}">Contact</a>.
-        </p>
-    </div>
+<div class="text-center mb-5">
+    <h1 class="fw-bold text-primary">Bienvenue sur DomServices</h1>
+    <p class="lead">
+        Des <strong>services à domicile</strong> adaptés à vos besoins :
+        formation, assistance informatique, entretien et bien plus encore.
+    </p>
+    <a href="{% url 'services:services' %}" class="btn btn-primary btn-lg mt-3">
+        Voir nos services
+    </a>
 </div>
 {% endblock %}
