@@ -1,7 +1,7 @@
 Service-Informatique-Domicile
 
-Service-Informatique-Domicile** est un projet web développé avec Python (Django).  
-Il a pour objectif de proposer des **services informatiques à domicile, avec une interface simple, fluide et professionnelle.
+Service-Informatique-Domicile est un projet web développé avec Python (Django).  
+Il a pour objectif de proposer des services informatiques à domicile, avec une interface simple, fluide et professionnelle.
 
 ---
 
@@ -9,13 +9,13 @@ Il a pour objectif de proposer des **services informatiques à domicile, avec un
 
 - Page d’accueil : Présente les services proposés et la mission du site.  
 - Liste des services : Affiche l’ensemble des services disponibles à domicile.  
-- Page de contact: Permet aux utilisateurs de contacter le prestataire directement via le site.
+- Page de contact: Fomrulaire de contact fonctionnel relié à une adresse e-mail via 'forms.py' et 'send_mail'. Permet aux utilisateurs de contacter le prestataire directement via le site.
 
 ---
 
 Technologies utilisées
 
--Backend : Django (Python 3.x)
+-Backend : Django (Python 3.12)
 - Frontend : HTML5, CSS3, Bootstrap 5
 - Base de données : SQLite (par défaut Django)
 -Outils : Visual Studio Code, Git, GitHub
