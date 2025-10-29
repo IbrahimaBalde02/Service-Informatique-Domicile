@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 
     # Tes apps
     'Services.apps.ServicesConfig',
+    'widget_tweaks',
 ]
 
 
@@ -100,6 +101,16 @@ STATIC_ROOT = BASE_DIR / "staticfiles"    # Pour collectstatic (prod)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
 
+# Configuration de l’envoi d’emails
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'           # pour Gmail 
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'ibrahima.tounkisbalde@gmail.com'  # mon adresse email
+EMAIL_HOST_PASSWORD = 'rgvr rrxo kjlq gvmj'  # ⚠️ mon mot de passe d’application Gmail/DomService
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 # --- AUTRES CONFIGS ---
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

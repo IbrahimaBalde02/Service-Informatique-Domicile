@@ -4,10 +4,27 @@
 
 {% block content %}
 <div class="my-5">
-  <h1 class="text-center mb-4 text-primary fw-bold">Nos Services à Domicile</h1>
-  <p class="text-center text-muted mb-5">Découvrez nos prestations à domicile : rapide et personnalisé.</p>
-  <p><strong><em>NB: L'inscription se fait une seule fois et c'est a 20 000 GNF</em></strong></p>
-    <p><strong><em>Un frait de transport peut être démandé en fonction de la localité et de la disponibilité du Client</em></strong></p>
+  
+    <h1 class="text-center mb-4 text-primary fw-bold">Nos Services à Domicile</h1>
+    <p class="text-center text-muted mb-5">
+        Découvrez nos prestations à domicile : rapides, fiables et personnalisées selon vos besoins.
+    </p>
+
+    <div class="alert alert-info text-center" role="alert">
+        <strong>NB :</strong> L'inscription se fait une seule fois pour <strong>20 000 GNF</strong>.
+    </div>
+    <div class="alert alert-warning text-center" role="alert">
+        Un frais de transport peut être demandé en fonction de la localité et de la disponibilité du client.
+    </div>
+
+    <h3 class="mt-5 mb-3 text-primary fw-bold">Nos prestations principales :</h3>
+    <ul class="list-group list-group-flush mb-5">
+        <li class="list-group-item">Formation informatique personnalisée</li>
+        <li class="list-group-item">Assistance et dépannage informatique</li>
+        <li class="list-group-item">Entretien et maintenance de vos appareils</li>
+        <li class="list-group-item">Autres services à domicile sur demande</li>
+    </ul>
+
 
   <div class="row">
     {% for service in services %}

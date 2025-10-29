@@ -1,7 +1,7 @@
 ![Bannière DomServices](banner.png)
 
 # 🏠 DomServices
-**Plateforme de services à domicile** – développée avec Django & Python.
+Plateforme de services à domicile – développée avec Django & Python.
 
 ---
 

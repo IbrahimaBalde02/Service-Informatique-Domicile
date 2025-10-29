@@ -1,9 +1,41 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 {% block title %}Contact - DomServices{% endblock %}
 {% block content %}
 <div class="my-5">
-  <h1 class="text-center mb-4">Contactez-nous</h1>
-  <p class="text-center">Pour nous joindre, écris-nous à : <strong>ibrahima.tounkisbalde@gmail.com</strong>.</p>
-  <!-- Tu peux remplacer par un vrai formulaire Django plus tard -->
+    <h1 class="text-center mb-4">Contactez-nous</h1>
+    <p class="text-center mb-4">
+        Pour nous joindre, remplissez le formulaire ci-dessous et nous vous répondrons rapidement.
+    </p>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post" action="{% url 'services:contact' %}">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="id_name" class="form-label">Nom</label>
+                    {{ form.name|add_class:"form-control" }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_email" class="form-label">Email</label>
+                    {{ form.email|add_class:"form-control" }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_subject" class="form-label">Sujet</label>
+                    {{ form.subject|add_class:"form-control" }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_message" class="form-label">Message</label>
+                    {{ form.message|add_class:"form-control" }}
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 mt-3">Envoyer</button>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}
