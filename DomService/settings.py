@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 
     # Tes apps
     'Services.apps.ServicesConfig',
+    'comptes',
     'widget_tweaks',
 ]
 
@@ -110,6 +111,8 @@ EMAIL_HOST_USER = 'ibrahima.tounkisbalde@gmail.com'  # mon adresse email
 EMAIL_HOST_PASSWORD = 'rgvr rrxo kjlq gvmj'  # ⚠️ mon mot de passe d’application Gmail/DomService
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+#Daclaration du utilisateur comme utilisateur principale
+AUTH_USER_MODEL = 'comptes.Utilisateur'
 
 # --- AUTRES CONFIGS ---
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

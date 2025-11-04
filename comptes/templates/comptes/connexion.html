@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Connexion - DomService{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h3 class="text-center mb-4 fw-bold text-success">Se connecter à DomService</h3>
+
+                    <!-- Formulaire de connexion -->
+                    <form method="post" class="mt-3">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="username" class="form-label fw-semibold">Nom d'utilisateur</label>
+                            <input 
+                                type="text" 
+                                name="username" 
+                                id="username" 
+                                class="form-control rounded-3 border-success-subtle" 
+                                placeholder="Entrez votre nom d'utilisateur" 
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label fw-semibold">Mot de passe</label>
+                            <input 
+                                type="password" 
+                                name="password" 
+                                id="password" 
+                                class="form-control rounded-3 border-success-subtle" 
+                                placeholder="Votre mot de passe" 
+                                required>
+                        </div>
+
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-success btn-lg rounded-pill shadow-sm">
+                                <i class="bi bi-box-arrow-in-right me-2"></i> Se connecter
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Ligne de séparation -->
+                    <hr class="my-4">
+
+                    <!-- Redirection vers inscription -->
+                    <div class="text-center">
+                        <p class="mb-1">Pas encore de compte ?</p>
+                        <a href="{% url 'inscription' %}" class="btn btn-outline-info rounded-pill px-4 py-2">
+                            <i class="bi bi-person-plus me-2"></i>Créer un compte
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
