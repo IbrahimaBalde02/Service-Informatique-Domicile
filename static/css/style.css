@@ -1,0 +1,43 @@
+/* 🌈 Style global */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🧭 Navbar */
+.navbar {
+  border-bottom: 3px solid #0d6efd;
+}
+
+.navbar-brand {
+  letter-spacing: 1px;
+}
+
+/* ✨ Boutons de la navbar */
+.navbar .btn {
+  transition: all 0.3s ease-in-out;
+  border-radius: 25px;
+  font-weight: 500;
+}
+
+.navbar .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 10px rgba(13, 110, 253, 0.3);
+}
+
+/* 🖼️ Image d'accueil */
+header img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* ⚓ Footer */
+footer {
+  border-top: 2px solid #0d6efd;
+}
+
+footer p {
+  margin: 0;
+}

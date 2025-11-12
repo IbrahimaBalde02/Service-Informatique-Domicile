@@ -1,16 +1,18 @@
-# Environnement virtuel
-venv/
-.env
+# Ignorer l'environnement virtuel
+env/
 
-# Fichiers Django
+# Fichiers et dossiers temporaires
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-db.sqlite3
-/static/
-media/
+*.log
 
-# Fichiers système
+# Base de données locale
+db.sqlite3
+
+# Fichiers système Windows / IDE
+.vscode/
+.idea/
 .DS_Store
-Thumbs.db
+
