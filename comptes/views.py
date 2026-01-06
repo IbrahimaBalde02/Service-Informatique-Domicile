@@ -26,7 +26,7 @@ def connexion(request):
             user = form.get_user()
             login(request, user)
             messages.success(request, f"Bienvenue {user.username} ! 👋")
-            return redirect('services:accueil')
+            return redirect('dashboard:redirect')
         else:
             messages.error(request, "Nom d'utilisateur ou mot de passe incorrect.")
     else:

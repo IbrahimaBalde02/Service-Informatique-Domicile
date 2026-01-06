@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     # Tes apps
     'Services.apps.ServicesConfig',
     'comptes',
+    'dashboard',
     'widget_tweaks',
 ]
 
@@ -54,7 +55,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # ✅ Dossier global des templates
-        'DIRS': [], #BASE_DIR / 'templates'
+        'DIRS': [BASE_DIR / 'templates'], #BASE_DIR / 'templates'
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,4 +117,6 @@ AUTH_USER_MODEL = 'comptes.Utilisateur'
 
 # --- AUTRES CONFIGS ---
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
 

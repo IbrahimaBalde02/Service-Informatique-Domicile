@@ -1,9 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.mail import send_mail
 from .models import Service
 from .forms import ContactForm
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib import messages  # <- pour les messages flash
+
+#Vue detail service
+def service_detail(request, pk):
+    service = get_object_or_404(Service, pk=pk)
+    return render(request, 'services/detail_service.html', {
+        'service': service
+    })
 
 # Vue d'accueil
 def accueil(request):
@@ -17,12 +25,6 @@ def liste_services(request):
     services = Service.objects.all().order_by('-date_creation')  # tri du plus récent au plus ancien
     return render(request, 'Services/liste_services.html', {'services': services})
 
-
-from django.shortcuts import render, redirect
-from django.core.mail import send_mail
-from django.conf import settings
-from django.contrib import messages  # <- pour les messages flash
-from .forms import ContactForm
 
 def contact_view(request):
     success = False  # on garde ta variable
