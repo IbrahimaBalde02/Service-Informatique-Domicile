@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'services:accueil' %}">Accueil</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{% url 'services:dashboard_prestataire' %}">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ service.titre }}
+            </li>
+        </ol>
+    </nav>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title">{{ service.titre }}</h2>
+            <p class="card-text">{{ service.description }}</p>
+
+            {% if service.details %}
+                <h5>Détails</h5>
+                <p>{{ service.details }}</p>
+            {% endif %}
+
+            {% if service.prix %}
+                <p class="fw-bold text-success">
+                    Prix : {{ service.prix }} GNF
+                </p>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

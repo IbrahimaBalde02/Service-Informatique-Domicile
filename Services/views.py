@@ -66,3 +66,30 @@ def contact_view(request):
 def apropos(request):
     """Page à propos du site."""
     return render(request, 'Services/apropos.html')
+
+
+
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from .models import Service
+
+@login_required
+def dashboard_prestataire(request):
+    # Sécurité : accès réservé aux prestataires
+    if request.user.role != 'prestataire':
+        return redirect('services:accueil')
+
+    services = Service.objects.all()
+
+    context = {
+        'services': services,
+    }
+
+    return render(request, 'dashboards/prestataire_dashboard.html', context)
+
+
+# Détail d'un service
+def service_detail(request, pk):
+    service = get_object_or_404(Service, pk=pk)
+    return render(request, 'services/service_detail.html', {'service': service})
+

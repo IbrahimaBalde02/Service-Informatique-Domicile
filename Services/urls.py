@@ -10,4 +10,6 @@ urlpatterns = [
      path('contact/', views.contact_view, name='contact'),
     path('apropos/', views.apropos, name='apropos'),
     path('service/<int:pk>/', views.service_detail, name='detail'),
+    path('dashboard/prestataire/', views.dashboard_prestataire, name='dashboard_prestataire'),
+
 ]

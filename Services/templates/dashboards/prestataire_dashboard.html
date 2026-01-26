@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{% url 'services:accueil' %}">Accueil</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                Dashboard Prestataire
+            </li>
+        </ol>
+    </nav>
+
+    <h2 class="mb-4">👷 Tableau de bord – Prestataire</h2>
+
+    <div class="row">
+        {% for service in services %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ service.titre }}</h5>
+                        <p class="card-text">
+                            {{ service.description|truncatechars:100 }}
+                        </p>
+
+                        {% if service.prix %}
+                            <p class="fw-bold text-success">
+                                {{ service.prix }} GNF
+                            </p>
+                        {% endif %}
+
+                        <a href="{% url 'services:detail' service.id %}" class="btn btn-outline-primary btn-sm">
+                            Voir détails
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>Aucun service disponible pour le moment.</p>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
